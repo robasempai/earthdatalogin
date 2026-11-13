@@ -1,0 +1,22 @@
+library(earthdatalogin)
+# no necesita API token (creo)
+# Buscar colecciones con ECCO
+ecco_cols <- edl_search(
+  keyword = "ECCO",
+  provider = "PODAAC"
+)
+print(unique(ecco_cols$short_name))
+
+# Buscar colecciones con HYCOM
+hycom_cols <- edl_search(
+  keyword = "HYCOM",
+  provider = "PODAAC"
+)
+print(unique(hycom_cols$short_name))
+
+# O buscar genérico "temperature salinity" en PO.DAAC
+ts_cols <- edl_search(
+  keyword = "temperature salinity",
+  provider = "PODAAC"
+)
+print(unique(ts_cols$short_name))
